@@ -4,7 +4,7 @@
   "description": "Helpers for my jQuery plugins.",
   "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com/)",
   "license": "MIT",
-  "main": "src/kist-pluginator.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
