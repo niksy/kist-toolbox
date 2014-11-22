@@ -11,6 +11,9 @@
   "scripts": {
     "test": "grunt test"
   },
+  "dependencies": {
+    "jquery": "^2.1.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bump": "^0.0.13",
@@ -18,7 +21,6 @@
     "grunt-jscs": "^0.6.1",
     "grunt-karma": "^0.9.0",
     "grunt-mocha-test": "^0.12.3",
-    "jquery": "^2.1.1",
     "karma": "^0.12.25",
     "karma-browserify": "^1.0.0",
     "karma-chrome-launcher": "^0.1.5",
@@ -27,5 +29,19 @@
     "karma-spec-reporter": "0.0.13",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^2.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niksy/kist-pluginator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niksy/kist-pluginator/issues"
+  },
+  "homepage": "https://github.com/niksy/kist-pluginator",
+  "keywords": [
+    "kist",
+    "browserify",
+    "jquery",
+    "plugin"
+  ]
 }
