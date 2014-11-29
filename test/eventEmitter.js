@@ -1,6 +1,5 @@
 var assert = require('assert');
-var $ = require('jquery');
-var eventEmitter = require('../src/eventEmitter')($, { name: 'Foo' });
+var eventEmitter = require('../src/eventEmitter')({ name: 'Foo' });
 
 describe('eventEmitter', function () {
 

@@ -1,6 +1,5 @@
 var assert = require('assert');
-var $ = require('jquery');
-var runPlugin = require('../src/runPlugin')($, 'Foo');
+var runPlugin = require('../src/runPlugin')('Foo');
 
 describe('runPlugin', function () {
 

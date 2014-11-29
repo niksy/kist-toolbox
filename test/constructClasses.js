@@ -1,5 +1,5 @@
 var assert = require('assert');
-var constructClasses = require('../src/constructClasses')(require('jquery'));
+var constructClasses = require('../src/constructClasses');
 
 describe('constructClasses', function () {
 

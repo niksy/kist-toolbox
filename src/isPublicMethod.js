@@ -1,10 +1,11 @@
+var $ = require('jquery');
+
 /**
- * @param  {Object} $
  * @param  {Array} methods
  *
  * @return {Function}
  */
-module.exports = function ( $, methods ) {
+module.exports = function ( methods ) {
 
 	/**
 	 * @param  {Object} options

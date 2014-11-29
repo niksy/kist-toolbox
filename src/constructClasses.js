@@ -1,7 +1,8 @@
 /* jshint maxparams:false */
 
+var $ = require('jquery');
+
 /**
- * @param  {Object} $
  * @param  {Object} defaultClasses
  * @param  {Object} customClasses
  * @param  {String} defaultNs
@@ -9,7 +10,7 @@
  *
  * @return {Object}
  */
-function fn ( $, defaultClasses, customClasses, defaultNs, customNs ) {
+module.exports = function ( defaultClasses, customClasses, defaultNs, customNs ) {
 
 	defaultClasses    = defaultClasses || {};
 	customClasses     = customClasses || {};
@@ -49,8 +50,4 @@ function fn ( $, defaultClasses, customClasses, defaultNs, customNs ) {
 		classesNs: classesOnlyLastNs
 	};
 
-}
-
-module.exports = function ( $ ) {
-	return $.proxy(fn, this, $);
 };

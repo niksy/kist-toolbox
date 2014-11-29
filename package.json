@@ -43,5 +43,8 @@
     "browserify",
     "jquery",
     "plugin"
-  ]
+  ],
+  "browser": {
+    "jquery": "./src/util/jquery.js"
+  }
 }
