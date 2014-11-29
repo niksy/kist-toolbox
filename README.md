@@ -76,6 +76,18 @@ Type: `Object|String`
 
 Type: `Function`
 
+### `log`
+
+Returns: `Object`
+
+#### `error(msg)`
+
+Returns: `Error`
+
+##### msg
+
+Type: `String`
+
 ## Examples
 
 ### `constructClasses`
@@ -166,6 +178,13 @@ runPlugin(el, {
 }, Constructor);
 
 runPlugin(el, 'foo', publicMethodArg);
+```
+
+### `log`
+
+```js
+var log = require('kist-pluginator').log('Foo');
+log.error('Error!'); // Foo: Error!
 ```
 
 ## License
