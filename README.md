@@ -44,12 +44,44 @@ Type: `String`
 
 Type: `Array`
 
+### `constructOptions(options)`
+
+Returns: `Object`
+
+#### options
+
+Type: `Object`
+
+### `isPublicMethod(name)`
+
+Returns: `Boolean`
+
+#### name
+
+Type: `String`
+
+### `runPlugin(el, options, method)`
+
+Returns: `jQuery`
+
+#### el
+
+Type: `jQuery`
+
+#### options
+
+Type: `Object|String`
+
+#### method
+
+Type: `Function`
+
 ## Examples
 
 ### `constructClasses`
 
 ```js
-var constructClasses = require('kist-pluginator').constructClasses($);
+var constructClasses = require('kist-pluginator').constructClasses;
 
 constructClasses({
 	foo: 'Foobar-bar',
@@ -81,7 +113,7 @@ constructClasses({
 ### `eventEmitter`
 
 ```js
-var eventEmmiter = require('kist-pluginator').eventEmmiter($, { name: 'Foo' });
+var eventEmmiter = require('kist-pluginator').eventEmmiter('Foo');
 
 var el = $({});
 var a = {
@@ -105,6 +137,35 @@ eventEmmiter(a, 'bar', ['bad'], el);
 // foo === 3;
 // bar === 'bazbazbad';
 // ctx === {};
+```
+
+### `constructOptions`
+
+```js
+var constructOptions = require('kist-pluginator').constructOptions;
+constructOptions({});
+// {}
+```
+
+### `isPublicMethod`
+
+```js
+var isPublicMethod = require('kist-pluginator').isPublicMethod(['foo']);
+isPublicMethod('foo'); // true
+isPublicMethod('bar'); // false
+```
+
+### `runPlugin`
+
+```js
+var runPlugin = require('kist-pluginator').runPlugin('Foo');
+runPlugin(el, {
+	foo: function () {
+		//
+	}
+}, Constructor);
+
+runPlugin(el, 'foo', publicMethodArg);
 ```
 
 ## License
