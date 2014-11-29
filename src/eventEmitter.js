@@ -7,10 +7,10 @@ var $ = require('jquery');
  *
  * @return {Function}
  */
-module.exports = function ( plugin ) {
+module.exports = function ( name ) {
 
 	/**
-	 * @param  {Object}   plugin
+	 * @param  {String}   name
 	 * @param  {Object}   ctx
 	 * @param  {String}   eventName
 	 * @param  {Array}    data
@@ -18,11 +18,10 @@ module.exports = function ( plugin ) {
 	 */
 	return function ( ctx, eventName, data, triggerEl ) {
 		var el = (ctx.dom && ctx.dom.el) || ctx.$el || $({});
-		plugin = plugin || {};
 		if ( ctx.options[eventName] ) {
 			ctx.options[eventName].apply((el.length === 1 ? el[0] : el.toArray()), data);
 		}
-		(triggerEl || el).trigger((plugin.name + eventName).toLowerCase(), data);
+		(triggerEl || el).trigger(((name || '') + eventName).toLowerCase(), data);
 	};
 
 };
