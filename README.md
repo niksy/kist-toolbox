@@ -1,11 +1,11 @@
-# kist-pluginator
+# kist-toolbox
 
-Helpers for my jQuery plugins.
+Various helpers for my projects.
 
 ## Installation
 
 ```sh
-npm install kist-pluginator --save
+npm install kist-toolbox --save
 ```
 
 ## API
@@ -93,7 +93,7 @@ Type: `String`
 ### `constructClasses`
 
 ```js
-var constructClasses = require('kist-pluginator').constructClasses;
+var constructClasses = require('kist-toolbox').constructClasses;
 
 constructClasses({
 	foo: 'Foobar-bar',
@@ -125,7 +125,7 @@ constructClasses({
 ### `eventEmitter`
 
 ```js
-var eventEmmiter = require('kist-pluginator').eventEmmiter('Foo');
+var eventEmmiter = require('kist-toolbox').eventEmmiter('Foo');
 
 var el = $({});
 var a = {
@@ -154,7 +154,7 @@ eventEmmiter(a, 'bar', ['bad'], el);
 ### `constructOptions`
 
 ```js
-var constructOptions = require('kist-pluginator').constructOptions;
+var constructOptions = require('kist-toolbox').constructOptions;
 constructOptions({});
 // {}
 ```
@@ -162,7 +162,7 @@ constructOptions({});
 ### `isPublicMethod`
 
 ```js
-var isPublicMethod = require('kist-pluginator').isPublicMethod(['foo']);
+var isPublicMethod = require('kist-toolbox').isPublicMethod(['foo']);
 isPublicMethod('foo'); // true
 isPublicMethod('bar'); // false
 ```
@@ -170,7 +170,7 @@ isPublicMethod('bar'); // false
 ### `runPlugin`
 
 ```js
-var runPlugin = require('kist-pluginator').runPlugin('Foo');
+var runPlugin = require('kist-toolbox').runPlugin('Foo');
 runPlugin(el, {
 	foo: function () {
 		//
@@ -183,7 +183,7 @@ runPlugin(el, 'foo', publicMethodArg);
 ### `log`
 
 ```js
-var log = require('kist-pluginator').log('Foo');
+var log = require('kist-toolbox').log('Foo');
 log.error('Error!'); // Foo: Error!
 ```
 
