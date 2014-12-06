@@ -23,7 +23,6 @@ module.exports = function ( defaultClasses, customClasses, defaultNs, customNs )
 	$.each(defaultClasses, function ( name, className ) {
 
 		var classReplacedNs   = customNs ? className.replace(defaultNs, customNs) : className;
-
 		var classNameCustomNs = '';
 		var classOnlyLastNs   = className;
 		var classComplete     = className;
@@ -36,8 +35,8 @@ module.exports = function ( defaultClasses, customClasses, defaultNs, customNs )
 
 		if ( customClasses[name] ) {
 			classComplete = customClasses[name]
-								.replace(/\{customNsClass\}/g,classNameCustomNs || '{baseClass}')
-								.replace(/\{baseClass\}/g,className);
+								.replace(/\{customNsClass\}/g, classNameCustomNs || '{baseClass}')
+								.replace(/\{baseClass\}/g, className);
 		}
 
 		classesOnlyLastNs[name] = classOnlyLastNs;
