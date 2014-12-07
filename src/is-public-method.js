@@ -8,12 +8,12 @@ var $ = require('jquery');
 module.exports = function ( methods ) {
 
 	/**
-	 * @param  {Object} options
+	 * @param  {String} name
 	 *
 	 * @return {Boolean}
 	 */
-	return function ( options ) {
-		return typeof(options) === 'string' && $.inArray(options, methods || []) !== -1;
+	return function ( name ) {
+		return typeof(name) === 'string' && $.inArray(name, methods || []) !== -1;
 	};
 
 };

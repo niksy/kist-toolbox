@@ -3,14 +3,13 @@
 var $ = require('jquery');
 
 /**
- * @param  {Object} plugin
+ * @param  {String} name
  *
  * @return {Function}
  */
 module.exports = function ( name ) {
 
 	/**
-	 * @param  {String}   name
 	 * @param  {Object}   ctx
 	 * @param  {String}   eventName
 	 * @param  {Array}    data

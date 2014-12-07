@@ -44,14 +44,6 @@ Type: `String`
 
 Type: `Array`
 
-### `constructOptions(options)`
-
-Returns: `Object`
-
-#### options
-
-Type: `Object`
-
 ### `isPublicMethod(name)`
 
 Returns: `Boolean`
@@ -59,22 +51,6 @@ Returns: `Boolean`
 #### name
 
 Type: `String`
-
-### `runPlugin(el, options, method)`
-
-Returns: `jQuery`
-
-#### el
-
-Type: `jQuery`
-
-#### options
-
-Type: `Object|String`
-
-#### method
-
-Type: `Function`
 
 ### `log`
 
@@ -151,33 +127,12 @@ eventEmmiter(a, 'bar', ['bad'], el);
 // ctx === {};
 ```
 
-### `constructOptions`
-
-```js
-var constructOptions = require('kist-toolbox').constructOptions;
-constructOptions({});
-// {}
-```
-
 ### `isPublicMethod`
 
 ```js
 var isPublicMethod = require('kist-toolbox').isPublicMethod(['foo']);
 isPublicMethod('foo'); // true
 isPublicMethod('bar'); // false
-```
-
-### `runPlugin`
-
-```js
-var runPlugin = require('kist-toolbox').runPlugin('Foo');
-runPlugin(el, {
-	foo: function () {
-		//
-	}
-}, Constructor);
-
-runPlugin(el, 'foo', publicMethodArg);
 ```
 
 ### `log`
