@@ -1,5 +1,5 @@
 var assert = require('assert');
-var isPublicMethod = require('../src/isPublicMethod');
+var isPublicMethod = require('../src/is-public-method');
 
 describe('isPublicMethod', function () {
 

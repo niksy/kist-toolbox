@@ -1,5 +1,5 @@
 var assert = require('assert');
-var getOptions = require('../src/getOptions');
+var getOptions = require('../src/get-options');
 
 describe('getOptions', function () {
 

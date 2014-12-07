@@ -1,5 +1,5 @@
 var assert = require('assert');
-var runPlugin = require('../src/runPlugin')('Foo');
+var runPlugin = require('../src/run-plugin')('Foo');
 
 describe('runPlugin', function () {
 
