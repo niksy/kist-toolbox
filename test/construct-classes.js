@@ -65,25 +65,29 @@ describe('constructClasses', function () {
 			foo: 'Foobar-bar',
 			bar: 'Foobar-baz',
 			baz: 'Foobar-bad',
-			isBaz: 'is-bad'
+			isBaz: 'is-bad',
+			isBad: 'is-bag'
 		}, {
 			foo: '{baseClass}',
 			bar: '{customNsClass} Badfoo',
-			isBaz: '{baseClass} Barbaz {customNsClass}'
+			isBaz: '{baseClass} Barbaz {customNsClass}',
+			isBad: 'is-bag1 is-bag2'
 		}, 'Foobar');
 
 		assert.deepEqual(cc.classes, {
 			foo: 'Foobar-bar',
 			bar: 'Foobar-baz Badfoo',
 			baz: 'Foobar-bad',
-			isBaz: 'is-bad Barbaz is-bad'
+			isBaz: 'is-bad Barbaz is-bad',
+			isBad: 'is-bag1 is-bag2'
 		});
 
 		assert.deepEqual(cc.classesNs, {
 			foo: 'Foobar-bar',
 			bar: 'Foobar-baz',
 			baz: 'Foobar-bad',
-			isBaz: 'is-bad'
+			isBaz: 'is-bad',
+			isBad: 'is-bag2'
 		});
 
 	});
@@ -94,25 +98,29 @@ describe('constructClasses', function () {
 			foo: 'Foobar-bar',
 			bar: 'Foobar-baz',
 			baz: 'Foobar-bad',
-			isBaz: 'is-bad'
+			isBaz: 'is-bad',
+			isBad: 'is-bag'
 		}, {
 			foo: '{baseClass}',
 			bar: '{customNsClass} Badfoo',
-			isBaz: '{baseClass} Barbaz {customNsClass}'
+			isBaz: '{baseClass} Barbaz {customNsClass}',
+			isBad: 'is-bag1 is-bag2'
 		}, 'Foobar', 'Barbaz');
 
 		assert.deepEqual(cc.classes, {
 			foo: 'Foobar-bar',
 			bar: 'Barbaz-baz Badfoo',
 			baz: 'Foobar-bad Barbaz-bad',
-			isBaz: 'is-bad Barbaz is-bad'
+			isBaz: 'is-bad Barbaz is-bad',
+			isBad: 'is-bag1 is-bag2'
 		});
 
 		assert.deepEqual(cc.classesNs, {
 			foo: 'Barbaz-bar',
 			bar: 'Barbaz-baz',
 			baz: 'Barbaz-bad',
-			isBaz: 'is-bad'
+			isBaz: 'is-bad',
+			isBad: 'is-bag2'
 		});
 
 	});

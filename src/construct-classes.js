@@ -26,6 +26,8 @@ module.exports = function ( defaultClasses, customClasses, defaultNs, customNs )
 		var classNameCustomNs = '';
 		var classOnlyLastNs   = className;
 		var classComplete     = className;
+		var classesList       = [];
+		var customClass       = customClasses[name];
 
 		if ( classReplacedNs !== className ) {
 			classNameCustomNs = classReplacedNs;
@@ -33,10 +35,15 @@ module.exports = function ( defaultClasses, customClasses, defaultNs, customNs )
 			classComplete = className + ' ' + classNameCustomNs;
 		}
 
-		if ( customClasses[name] ) {
-			classComplete = customClasses[name]
+		if ( customClass ) {
+			classComplete = customClass
 								.replace(/\{customNsClass\}/g, classNameCustomNs || '{baseClass}')
 								.replace(/\{baseClass\}/g, className);
+
+			if ( !(/\{baseClass\}|\{customNsClass\}/g.test(customClass)) ) {
+				classesList = customClass.replace(/\s{2,}/g,' ').split(' ');
+				classOnlyLastNs = classesList[classesList.length-1];
+			}
 		}
 
 		classesOnlyLastNs[name] = classOnlyLastNs;
