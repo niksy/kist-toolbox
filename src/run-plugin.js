@@ -8,7 +8,7 @@ var $ = require('jquery');
 module.exports = function ( name ) {
 
 	/**
-	 * @param  {Object} options
+	 * @param  {Object|String} options
 	 * @param  {Function} method
 	 *
 	 * @return {jQuery}
@@ -21,9 +21,9 @@ module.exports = function ( name ) {
 		return (el || $()).each(function () {
 			var instance = $.data(this, name);
 			var Method;
-			if ( instance && typeof(options) === 'string' ) {
-				instance[options](method && method());
-			} else {
+			if ( $.type(options) === 'string' && instance ) {
+				instance[options](method());
+			} else if ( $.type(options) === 'object' && !instance ) {
 				Method = method;
 				$.data(this, name, new Method(this, options));
 			}

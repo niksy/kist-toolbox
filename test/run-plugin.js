@@ -17,6 +17,14 @@ describe('runPlugin', function () {
 			assert.equal(typeof($.data(el[0], 'Foo')), 'object');
 		});
 
+		it('should return undefined if trying to call method by string but there is no instance created', function () {
+			var el = $({});
+			runPlugin(el, 'foo');
+			runPlugin(el, 'foo');
+			runPlugin(el, 'foo');
+			assert.equal(typeof($.data(el[0], 'Foo')), 'undefined');
+		});
+
 	});
 
 	describe('custom props', function () {
