@@ -32,15 +32,11 @@ Returns: `Boolean`
 
 Type: `String`
 
-### `log`
-
-Returns: `Object`
-
-#### `error(msg)`
+### `throwError(msg)`
 
 Returns: `Error`
 
-##### msg
+#### msg
 
 Type: `String`
 
@@ -83,11 +79,11 @@ isPublicMethod('foo'); // true
 isPublicMethod('bar'); // false
 ```
 
-### `log`
+### `throwError`
 
 ```js
-var log = require('kist-toolbox').log('Foo');
-log.error('Error!'); // Foo: Error!
+var err = require('kist-toolbox').throwError('Foo');
+err('Error!'); // Foo: Error!
 ```
 
 ## License
