@@ -10,26 +10,6 @@ npm install kist-toolbox --save
 
 ## API
 
-### `constructClasses(defaultClasses, customClasses, defaultNs, customNs)`
-
-Returns: `Object`
-
-#### defaultClasses
-
-Type: `Object`
-
-#### customClasses
-
-Type: `Object`
-
-#### defaultNs
-
-Type: `String`
-
-#### customNS
-
-Type: `String`
-
 ### `eventEmitter(context, eventName, data)`
 
 #### context
@@ -65,38 +45,6 @@ Returns: `Error`
 Type: `String`
 
 ## Examples
-
-### `constructClasses`
-
-```js
-var constructClasses = require('kist-toolbox').constructClasses;
-
-constructClasses({
-	foo: 'Foobar-bar',
-	bar: 'Foobar-baz',
-	baz: 'Foobar-bad',
-	isBaz: 'is-bad'
-}, {
-	foo: '{baseClass}',
-	bar: '{customNsClass} Badfoo',
-	isBaz: '{baseClass} Barbaz {customNsClass}'
-}, 'Foobar', 'Barbaz');
-
-/* {
-	classes: {
-		foo: 'Foobar-bar',
-		bar: 'Barbaz-baz Badfoo',
-		baz: 'Foobar-bad Barbaz-bad',
-		isBaz: 'is-bad Barbaz is-bad'
-	},
-	classesNs: {
-		foo: 'Barbaz-bar',
-		bar: 'Barbaz-baz',
-		baz: 'Barbaz-bad',
-		isBaz: 'is-bad'
-	}
-} */
-```
 
 ### `eventEmitter`
 
