@@ -32,11 +32,23 @@ Returns: `Boolean`
 
 Type: `String`
 
-### `throwError(msg)`
+### `appendClass(prop, className)`
 
-Returns: `Error`
+Returns: `String`
 
-#### msg
+#### prop
+
+Type: `String`
+
+#### className
+
+Type: `String`
+
+### `appendNamespacedClasses(ns)`
+
+Returns: `Object`
+
+#### ns
 
 Type: `String`
 
@@ -45,9 +57,10 @@ Type: `String`
 ### `eventEmitter`
 
 ```js
-var eventEmmiter = require('kist-toolbox').eventEmmiter('Foo');
+var eventEmitter = require('kist-toolbox/lib/event-emitter')('Foo');
 
 var el = $({});
+var foo = 0;
 var a = {
 	options: {
 		foo: function ( result ) {
@@ -63,8 +76,8 @@ el.on('foofoo foobar', function ( e, result ) {
 	bar += result;
 });
 
-eventEmmiter(a, 'foo', ['baz']);
-eventEmmiter(a, 'bar', ['bad'], el);
+eventEmitter(a, 'foo', ['baz']);
+eventEmitter(a, 'bar', ['bad'], el);
 
 // foo === 3;
 // bar === 'bazbazbad';
@@ -74,16 +87,44 @@ eventEmmiter(a, 'bar', ['bad'], el);
 ### `isPublicMethod`
 
 ```js
-var isPublicMethod = require('kist-toolbox').isPublicMethod(['foo']);
+var isPublicMethod = require('kist-toolbox/lib/is-public-method')(['foo']);
 isPublicMethod('foo'); // true
 isPublicMethod('bar'); // false
 ```
 
-### `throwError`
+### `appendClass`
 
 ```js
-var err = require('kist-toolbox').throwError('Foo');
-err('Error!'); // Foo: Error!
+var appendClass = require('kist-toolbox/lib/append-class')({
+	foo: 'foo',
+	bar: 'bar'
+});
+appendClass('foo','bar'); // 'foo bar'
+appendClass('bar','barbarbar baz'); // 'bar barbarbar baz'
+```
+
+### `appendNamespacedClasses`
+
+```js
+var appendNamespacedClasses = require('kist-toolbox/lib/append-namespaced-classes')({
+	foo: 'Foobar-foo',
+	bar: 'Foobar-bar',
+	baz: 'foobarbaz',
+	bad: 'bad',
+	bag: 'Foobar-bag'
+}, 'Foobar');
+
+appendNamespacedClasses('Barbaz');
+
+/*
+{
+	foo: 'Foobar-foo Barbaz-foo',
+	bar: 'Foobar-bar Barbaz-bar',
+	baz: 'foobarbaz',
+	bad: 'bad',
+	bag: 'Foobar-bag Barbaz-bag'
+}
+*/
 ```
 
 ## License
