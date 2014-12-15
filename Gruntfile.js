@@ -25,7 +25,7 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					src: [
-						'src/**/*.js'
+						'lib/**/*.js'
 					]
 				}
 			}
@@ -37,7 +37,7 @@ module.exports = function ( grunt ) {
 					jshintrc: '.jshintrc'
 				},
 				src: [
-					'src/**/*.js'
+					'lib/**/*.js'
 				]
 			}
 		},

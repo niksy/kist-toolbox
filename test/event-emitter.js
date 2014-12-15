@@ -1,7 +1,7 @@
 var assert = require('assert');
-var eventEmitter = require('../src/event-emitter')('Foo');
+var eventEmitter = require('../lib/event-emitter')('Foo');
 
-describe('eventEmitter', function () {
+describe('event-emitter', function () {
 
 	var spy1, spy2, ctx;
 

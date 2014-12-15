@@ -1,7 +1,7 @@
 var assert = require('assert');
-var isPublicMethod = require('../src/is-public-method');
+var isPublicMethod = require('../lib/is-public-method');
 
-describe('isPublicMethod', function () {
+describe('is-public-method', function () {
 
 	it('should return boolean', function () {
 		var a = isPublicMethod();
